@@ -1,12 +1,14 @@
 const express = require('express')
 const cors = require('cors')
 const data = require('./data/data.js')
+const userRouter = require('./Controllers/login.js')
 const app = express()
 
 
 app.use(cors())
 app.use(express.json())
 
+app.use('/login',userRouter)
 
 app.get('/',(req,res) =>{
     res.json(data)
